@@ -224,7 +224,8 @@ function create_config( )
 		"anti_flood",
 		"ban",
 		"charge",
-		"azan"
+		"azan",
+		"rep"
     },
     sudo_users = {201707431,0}, --Sudo users
     moderation = {data = 'data/moderation.json'},
