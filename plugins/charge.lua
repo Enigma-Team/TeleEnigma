@@ -55,11 +55,11 @@ if (matches[1] == 'شارژ' or matches[1]:lower() == "charge") and matches[2] a
 		local buytime = tonumber(os.time())
 		local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 		redis:hset('expiretime',get_receiver(msg),timeexpire)
-		return "✅ گروه "..msg.to.title.." شارژ شد برای : "..matches[2].." روز"
+		return reply_msg(msg.id,"✅ گروه "..msg.to.title.." شارژ شد برای : "..matches[2].." روز",ok_cb,false)
 	end
 
 	-- Charge From Out Of GROUP
-	if matches[1] == 'charges' and is_sudo(msg) then
+	if matches[1]:lower() == 'charges' and is_sudo(msg) then
 		local group = 'channel#id'..matches[2]
 		if redis:hget('expires0',group) then redis:del('expires0',group) end
 		if redis:hget('expires1',group) then redis:del('expires1',group) end
@@ -130,7 +130,7 @@ local function pre_process(msg)
 				send_large_msg("user#id"..GpOwner,"مدیر گرامی ، سلام\n\n🚫 شارژ گروه شما با نام "..msg.to.title.." تمام شده است. بات از آن گروه خارج شد.\n\n👈 برای تمدید ربات در گروهتان با ما در ارتباط باشید\n☑️ ☑️ در صورتی که ریپورتید به گروه پشتیبانی مراجعه کنید :\n> https://telegram.me/joinchat/DAXPpz_VwM5azabRHkmmBg")
 			
 				-- rem group
-				hashes = 'mute_user:'..msg.to.id
+				hashes = 'enigma:cli:mute_user:'..msg.to.id
 				redis:del(hashes)
 				save_data(_config.moderation.data, data)
 				------------
@@ -187,8 +187,8 @@ end -- end pre_process(msg)
 
 return {
 patterns = {
-	"^(شارژ) (.*)$",
-	"^[/!#]([Cc][Hh][Aa][Rr][Gg][Ee])$",
+	"^(شارژ) (%d+)$",
+	"^[/!#]([Cc][Hh][Aa][Rr][Gg][Ee]) (%d+)$",
 	
 	"^[#!/]([Cc]harges) (%d+) (.*)$",
 	
