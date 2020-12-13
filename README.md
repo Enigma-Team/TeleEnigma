@@ -129,17 +129,7 @@ sudo_users = {
 بقیه ی دستورات رو میتونید با مراجعه به پلاگین ها متوجه بشید. بزودی بقیه ی دستورات رو همین گیت قرار خواهند گرفت
 
 ## برنامه نویس و توسعه دهنده
-[رضا مهدی پور](https://telegram.me/TeleExe)
-
-# تیم ما
-[رضا مهدی پور](https://telegram.me/TeleExe)
-
-[دانیال صالحی](https://telegram.me/danial6665)
-
-**کانال تیم ما در تلگرام :**
-
-[@EnigmaTM](https://telegram.me/EnigmaTM)
-
+[Reza Mehdipour](https://instagram.com/rezamehdpour)
 
 * * *
 ```
@@ -149,6 +139,4 @@ sudo_users = {
                     |  _| | '_ \| | |  _| \_ \ _ \ / _  |   | |/ _ \/ _  | \_ \ _ \
                     | |___| | | | | |_| | | | | | | (_| |   | |  __/ (_| | | | | | |
                     |_____|_| |_|_|\____|_| |_| |_|\__,_|   |_|\___|\__,_|_| |_| |_|
-            
-                                Our Channel On Telegram : @EnigmaTM
 ```
